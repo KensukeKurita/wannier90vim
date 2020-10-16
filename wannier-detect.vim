@@ -1,0 +1,1 @@
+au BufRead,BufNewFile *.win set filetype=wannier
