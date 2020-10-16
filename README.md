@@ -1,7 +1,14 @@
 # Wannier90 for Vim
+
+This is vim syntax for Wannier90.
+If you write a Wannier90-input, this syntax help you.
+![sample](./README-imag/sample.png)
+
+I made this with reference to quantum_espresso-vim.  
+Please check quantum_espresso-vim(https://github.com/leseixas/quantum_espresso-vim).
+
 ## Install
-### Manual Setup
-If there are not syntax and ftdetect directory, please make them.  
+If there are not syntax and ftdetect directory under ./.vim/, please make them.  
 ```
 cp ./wannier.vim          ~/.vim/syntax/wannier.vim
 cp ./wannier-detect.vim   ~/.vim/ftdetect/wannier-detect.vim
