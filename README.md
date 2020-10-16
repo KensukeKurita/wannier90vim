@@ -7,7 +7,7 @@ cp ./wannier.vim          ~/.vim/syntax/wannier.vim
 cp ./wannier-detect.vim   ~/.vim/ftdetect/wannier-detect.vim
 ```
 
-# param2vim.py
+## About param2vim.py
 You may not use this script. So, the details are omitted.<br>
 <br>
 To use param2vim.py, you must have
