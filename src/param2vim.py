@@ -1,5 +1,6 @@
-import os
 import re
+import datetime
+
 
 def get_key(lines):
     """
@@ -19,6 +20,7 @@ def get_key(lines):
     
     return result
 
+
 def write_keywords_vim(keywords):
     """
     arv: list:keyword
@@ -28,11 +30,14 @@ def write_keywords_vim(keywords):
     for key in keywords:
         text += "syntax keyword wannierKey {}\n".format(key)
 
-    return(text)
+    return text
+
 
 def get_syntax_from_QE(file):
 
-    text = '"From espresso.vim' + '\n' 
+    text = '"From espresso.vim' + '\n'
+    firstBoolean = True
+    firstComment = True
     for line in open(file, "r").readlines():
         if '"' in line:
             continue
@@ -40,29 +45,37 @@ def get_syntax_from_QE(file):
         if "espressoKey" in line:
             continue
         if "espressoComment" in line:
-            text += line.replace("espressoComment", "wanComment")
+            if firstComment:
+                text += "syntax match wanComment '#.*'" + "\n"
+                firstComment = False
+            text += line.replace("espressoComment", "wanComment") + "\n"
         if "espressoNumber" in line:
             text += line.replace("espressoNumber", "wanNumber")
         if "espressoString" in line:
             text += line.replace("espressoString", "wanString") 
         if "espressoBoolean" in line:
+            if firstBoolean:
+                text += "\n" + "syntax match wanBoolean '[TF]$'" + "\n"
+                firstBoolean = False
             text += line.replace("espressoBoolean", "wanBoolean")
 
     return text
 
+
 def get_header():
     text = '"Language: Wannier90' + "\n"
-    text += '"Last Change: 2020 Oct 15' + "\n" + "\n"
+    text += '"Last Change: {}'.format(datetime.date.today()) + "\n" + "\n"
 
     text += 'if exists("b:current_syntax")' + "\n"
     text += '    finish' + "\n"
-    text += 'endif' + "\n"
+    text += 'endif' + "\n" + "\n"
 
     return text
 
-def main():
 
-    with open("/home/kurita/code/wannier90-3.1.0/doc/user_guide/parameters.tex", "r") as f:
+def main(file_tex, file_espresso):
+
+    with open(file_tex, "r") as f:
         context = f.read()
     text = context.replace("\n", "thisisreturnposition")
     m = re.findall(r'begin{tabular}.*?end{tabular}', text)
@@ -77,15 +90,14 @@ def main():
     
     with open("wannier.vim", "w") as f:
         f.write(get_header())
-        f.write(get_syntax_from_QE("/home/kurita/.vim/syntax/espresso.vim"))
+        f.write(get_syntax_from_QE(file_espresso))
         f.write(write_keywords_vim(keywords))
+        f.write("\n" + "hi def link wannierKey Statement" + "\n")
+        f.write('\n' + 'let b:current_syntax = "wannier"' + '\n')
 
     return 0
 
-if __name__=='__main__':
-    main()
 
-
-
-
-
+if __name__ == '__main__':
+    main(file_tex="/home/kurita/code/wannier90-3.1.0/doc/user_guide/parameters.tex",
+         file_espresso="/home/kurita/.vim/syntax/espresso.vim")

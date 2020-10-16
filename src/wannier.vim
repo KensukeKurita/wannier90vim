@@ -1,11 +1,14 @@
 "Language: Wannier90
-"Last Change: 2020 Oct 15
+"Last Change: 2020-10-16
 
 if exists("b:current_syntax")
     finish
 endif
+
 "From espresso.vim
+syntax match wanComment '#.*'
 syntax match wanComment '!.*$'
+
 syntax match wanNumber '\d\+'
 syntax match wanNumber '[-+]\d\+'
 syntax match wanNumber '\d\+.\d*'
@@ -14,12 +17,15 @@ syntax match wanNumber '[-+]\=\d[[:digit:]]*[dD][\-+]\=\d\+'
 syntax match wanNumber '\d[[:digit:]]*[dD][\-+]\=\d\+'
 syntax match wanNumber '[-+]\=\d[[:digit:]]*\.\d*[dD][\-+]\=\d\+'
 syntax match wanNumber '\d[[:digit:]]*\.\d*[dD][\-+]\=\d\+'
+
+syntax match wanBoolean '[TF]$'
 syntax match wanBoolean '\.[tT][rR][uU][eE]\.'
 syntax match wanBoolean '\.[fF][aA][lL][sS][eE]\.'
 hi def link wanNumber      Constant
 hi def link wanString      Type
 hi def link wanBoolean     PreProc
 hi def link wanComment     Comment
+
 
 "name list from user guide
 syntax keyword wannierKey num_wann
@@ -157,3 +163,7 @@ syntax keyword wannierKey dist_cutoff
 syntax keyword wannierKey dist_cutoff_mode
 syntax keyword wannierKey one_dim_axis
 syntax keyword wannierKey translation_centre_frac
+
+hi def link wannierKey Statement
+
+let b:current_syntax = "wannier"
