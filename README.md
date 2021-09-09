@@ -5,7 +5,7 @@ If you write a Wannier90-input, this syntax help you.
 ![sample](./README-imag/sample.png)
 
 I made this with reference to quantum_espresso-vim.  
-Please check quantum_espresso-vim(https://github.com/leseixas/quantum_espresso-vim).
+Please check [quantum_espresso-vim](https://github.com/leseixas/quantum_espresso-vim).
 
 ## Install
 If there are not syntax and ftdetect directory under ./.vim/, please make them.  
