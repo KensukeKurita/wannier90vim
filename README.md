@@ -1,27 +1,29 @@
 # Wannier90 for Vim
 
-This is vim syntax for Wannier90.
-If you write a Wannier90-input, this syntax help you.
+This is vim syntax plugin for [Wannier90](http://www.wannier.org).
+If you write a Wannier90 input, this syntax will help you.
 ![sample](./README-imag/sample.png)
 
-I made this with reference to quantum_espresso-vim.  
-Please check [quantum_espresso-vim](https://github.com/leseixas/quantum_espresso-vim).
+I made this with reference to [quantum_espresso-vim](https://github.com/leseixas/quantum_espresso-vim).
+Please check the package when you see the source codes in this plugin.
 
 ## Install
-If there are not syntax and ftdetect directory under ./.vim/, please make them.  
-```
-cp ./wannier.vim          ~/.vim/syntax/wannier.vim
-cp ./wannier-detect.vim   ~/.vim/ftdetect/wannier-detect.vim
+
+If there are not syntax and ftdetect directory under `./.vim/`, please make them.
+
+```sh
+cp ./syntax/wannier.vim             ~/.vim/syntax/wannier.vim
+cp ./ftdetect/wannier-detect.vim    ~/.vim/ftdetect/wannier-detect.vim
 ```
 
-## About param2vim.py
-You may not use this script. So, the details are omitted.<br>
-<br>
-To use param2vim.py, you must have
-+ quantum_espresso-vim(https://github.com/leseixas/quantum_espresso-vim/syntax/espresso.vim)
-+ Wannier90-Userguide($wannier90/doc/parameters.tex) 
+## About `param2vim.py`
 
-<p>
-With using these file, wannier.vim can be made.
-The created wannier.vim include only namelist, so it is not completed.
-</p>
+The details about `param2vim.py` are omitted since you may not use this script.
+
+To use `param2vim.py`, one should have:
+
+- quantum_espresso-vim plugin
+- Wannier90 userguide in Wannier90 homepage
+
+One can create`wannier.vim` using `param2vim.py` alongwith these file, but `wannier.vim` includes only namelist of `*.win` file.
+
