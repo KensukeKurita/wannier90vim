@@ -1,4 +1,4 @@
-# Wannier90 for Vim
+# Vim syntax highlighting plugin for Wannier90
 
 This is vim syntax plugin for [Wannier90](http://www.wannier.org).
 If you write a Wannier90 input, this syntax will help you.
