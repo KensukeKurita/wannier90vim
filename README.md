@@ -22,7 +22,7 @@ Vim 8.0+ recognizes plugins under `$HOME/.vim/pack/**/start`.
 Vim recognizes plugins for syntax highlighting under `$HOME/.vim/syntax` and `$HOME/.vim/ftdetect`.
 
 ```sh
-% https://github.com/KensukeKurita/wannier90vim.git
+% git clone https://github.com/KensukeKurita/wannier90vim.git
 % mkdir -p $HOME/.vim/syntax $HOME/.vim/ftdetect
 % cp ./syntax/wannier.vim             $HOME/.vim/syntax/wannier.vim
 % cp ./ftdetect/wannier-detect.vim    $HOME/.vim/ftdetect/wannier-detect.vim
