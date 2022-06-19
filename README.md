@@ -9,11 +9,23 @@ Please check the package when you see the source codes in this plugin.
 
 ## Install
 
-If there are not syntax and ftdetect directory under `./.vim/`, please make them.
+### For Vim 8.0+
+
+Vim 8.0+ recognizes plugins under `$HOME/.vim/pack/**/start`.
 
 ```sh
-cp ./syntax/wannier.vim             ~/.vim/syntax/wannier.vim
-cp ./ftdetect/wannier-detect.vim    ~/.vim/ftdetect/wannier-detect.vim
+% git clone https://github.com/KensukeKurita/wannier90vim.git $HOME/.vim/pack/**/start
+```
+
+### Old Vim
+
+Vim recognizes plugins for syntax highlighting under `$HOME/.vim/syntax` and `$HOME/.vim/ftdetect`.
+
+```sh
+% git clone https://github.com/KensukeKurita/wannier90vim.git
+% mkdir -p $HOME/.vim/syntax $HOME/.vim/ftdetect
+% cp ./syntax/wannier.vim             $HOME/.vim/syntax/wannier.vim
+% cp ./ftdetect/wannier-detect.vim    $HOME/.vim/ftdetect/wannier-detect.vim
 ```
 
 ## About `param2vim.py`

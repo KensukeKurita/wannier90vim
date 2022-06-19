@@ -105,7 +105,7 @@ syntax keyword wanKey wannier_plot_scale
 syntax keyword wanKey wannier_plot_spinor_mode
 syntax keyword wanKey wannier_plot_spinor_phase
 syntax keyword wanKey bands_plot
-syntax match   wanKey '[kK]point_path'
+syntax match   wanKey '[kK]point_[pP]ath'
 syntax keyword wanKey nnkpts
 syntax keyword wanKey bands_num_points
 syntax keyword wanKey bands_plot_format
