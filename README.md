@@ -2,11 +2,10 @@
 
 This is vim syntax plugin for [Wannier90](http://www.wannier.org).
 If you write a Wannier90 input, this syntax will help you.
-![sample](./README-imag/sample.png)
 
-I made this with reference to [quantum_espresso-vim](https://github.com/leseixas/quantum_espresso-vim).
-Please check the package when you see the source codes in this plugin.
+![sample](https://user-images.githubusercontent.com/33048775/174470616-2fbf21ee-1d84-4a8b-9be7-6b5eeafd4dcf.png)
 
+I made this with reference to [quantum_espresso-vim](https://github.com/leseixas/quantum_espresso-vim).  Please check the package when you see the source codes in this plugin.
 ## Install
 
 ### For Vim 8.0+
